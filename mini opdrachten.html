@@ -1,0 +1,237 @@
+<html lang = "en">
+<head>
+    <style>
+
+    </style>
+    <script>
+        // mini opdracht 1
+        var Greetings = ["hallo", "doei"];
+        function textMessage(){
+            var input =  document.getElementById("message").value;
+           if (Greetings[0] == input) {
+                alert("welkom");
+            }
+            else if (Greetings[1]== input) {
+                alert("Tot de volgende keer");
+            }
+            else {
+            } 
+        }
+
+        // mini opdracht 2
+        function letterE(){
+            var tekstinput = document.getElementById("tekstgebruiker").value;
+            var locatie = tekstinput.indexOf("e");
+            if (locatie > 0){
+                alert("Het woord bevat de letter E");
+            } else {
+        }
+        }
+        // mini opdracht 3
+       function numberOfE(){
+            var input1 = document.getElementById("tekstveld1").value;
+            alert("De letter E komt " + input1.match(/e/g).length + " keer voor.");
+        } 
+
+        //=========== Advanced - fout --> nu zoekt hij op het woord input1 i.p.v. het ingevulde bij tekstveld2. Indien toepassen, welk onclick functie wijzigen naar numberOfStrings().
+       /* function numberOfString(){
+            var input1 = document.getElementById("tekstveld1").value;
+            var input2 = document.getElementById("tekstveld2").value;
+            alert("De letter " + input2 + " komt " + input1.match(/input1/g).length + " keer voor.");
+        } */
+
+        //mini opdracht 3 versie 2
+        function aantalE(){
+            var input1 = document.getElementById("tekstveld1").value;
+            count = 0;
+            for (x=0; x<input1.length; x++){
+                if (input1.charAt(x) == "e") {
+                    count++
+                }
+            } alert("De letter E komt " + count + " keer voor.");
+        }
+        function numberOfString(){
+            var input1 = document.getElementById("tekstveld1").value;
+            var input2 = document.getElementById("tekstveld2").value;
+            count =0;
+            for (x=0; x<input1.length; x++){
+                if (input1.charAt(x) == input2){
+                    count++
+                }
+            } alert("De letter " + input2 + " komt " + count + " keer voor.")
+        }
+    //mini opdracht 4 en 5
+       //var buttons = [klikA, klikB, klikC, klikD]; 
+       var countA = 0;
+       var countB = 0;
+       var countC = 0;
+       var countD = 0;
+        function youClickedOnA(){
+            var aantalKliks = count;
+            var klikA = document.getElementById("knopA").value;
+            document.getElementById("A").innerHTML += "<br> U heeft op knop A geklikt.";
+            if(countA++ == 1){
+                alert("Je hebt al 2 keer op knop A geklikt");
+            }
+            }
+        
+        function youClickedOnB(){
+            var klikB = document.getElementById("knopB").value;
+            document.getElementById("B").innerHTML += "<br> U heeft op knop B geklikt.";
+            if(countB++ == 1){
+                alert("Je hebt al 2 keer op knop B geklikt");
+            }
+        }
+        function youClickedOnC(){
+            document.getElementById("C").innerHTML += "<br> U heeft op knop C geklikt.";
+            var klikC = document.getElementById("knopC");
+            if(countC++ == 1){
+                alert("Je hebt al 2 keer op knop C geklikt");
+            }
+        }
+        function youClickedOnD(){
+            document.getElementById("D").innerHTML += "<br> U heeft op knop D geklikt.";
+            var klikD = document.getElementById("knopD");
+            if(countD++ == 1){
+                alert("Je hebt al 2 keer op knop D geklikt");
+            }
+        }
+        //mini opdracht 6
+        var Seasons = ["lente.jpeg", "zomer.jpeg", "herfst.jpeg", "winter.jpeg"];
+        // var Herfst = 'herfst.jpeg';
+        // var Zomer = 'zomer.jpeg';
+        // var Lente = 'lente.jpeg';
+        // var Winter = 'winter.jpeg';
+        
+
+        // function SwitchSeason(){
+            //count = 0;
+            // for (x=0; x<Seasons.length; x++){
+            //         if(x<=3){
+            //             count++
+            //             document.getElementById("myImage").innerHTML += Images();
+            //         }
+            //         else{
+            //             count=0;
+            //         }
+            //     }
+            // }
+            var joejoe = 0;
+            function Images(){
+                if (joejoe == 0){
+                    document.getElementById("myImage").src = Seasons[0];
+                    joejoe++;
+                }
+            else if (joejoe == 1){
+                    document.getElementById("myImage").src = Seasons[1];
+                    joejoe++;
+                }
+            else if (joejoe == 2){
+                    document.getElementById("myImage").src = Seasons[2];
+                    joejoe++;
+                }
+            else{
+                    document.getElementById("myImage").src = Seasons[3];
+                    joejoe = 0;
+                }
+            }
+            
+        
+    
+    </script>
+
+</head>
+
+<body>
+<!-- Mini Opdracht 1-->
+<h1>MiniOpdracht 1</h1>
+<p>Maak een tekst-invoerveld.
+Maak een knop.
+In dat invoerveld kan ik als gebruiker iets intypen.
+Als ik hallo intyp en dan op de knop klik komt er een alert met Welkom.
+Als ik doei intyp en dan op de knop klik komt er een alert met Tot de volgende keer.
+https://www.w3schools.com/tags/att_input_type_text.asp
+In andere gevallen gebeurd er niks.</p>
+<br>
+
+<input id="message" type="text" name="greeting"></input>
+<input type="button" onclick="textMessage()" value="Klik hier"></input>
+ 
+<!-- Mini Opdracht 2-->
+<h1>MiniOpdracht 2</h1>
+<p>Maak een tekst-invoerveld.
+Maak een knop.
+In dat invoerveld kan ik als gebruiker iets intypen. 
+Dat eerste veld gebruik ik om een woord in te typen.
+ 
+Als ik op de knop klik, krijg ik een alert als er de letter e in zit.
+Zit er geen letter e in, dan gebeurd er niks.
+ 
+https://www.w3schools.com/js/js_string_methods.asp </p>
+
+<input id="tekstgebruiker" type=text></input>
+<input type=button value="Letter E check" onclick="letterE()"></input>
+
+<!-- Mini Opdracht 3-->
+<h1>MiniOpdracht 3</h1>
+<p>Maak een tekst-invoerveld.
+Maak nog een tekst-invoerveld.
+Maak een knop.
+In dat invoerveld kan ik als gebruiker iets intypen. 
+Dat eerste veld gebruik ik om een woord in te typen.
+ 
+Als ik op de knop klik, krijg ik een alert met hoe vaak de letter e er in zit.
+Zit er geen letter e in, dan gebeurd er niks.
+ 
+ADVANCED: in het tweede veld kan ik bepalen, van welke letter ik wil weten of die erin zit en hoe vaak.
+ 
+https://www.w3schools.com/js/js_string_methods.asp </p>
+
+<p>Vul hier een woord in: <br> <input id="tekstveld1" type="text"></input></p>
+<p>Vul hier een letter(s) in waarvan u wilt weten hoe vaak deze voorkomt in het hierboven ingevulde woord:<br> <input id="tekstveld2" type="text"></input></p>
+<input type="button" value="klik" onclick="numberOfString()"></input>
+
+<!-- Mini Opdracht 4 en 5-->
+<h1>MiniOpdracht 4 en 5</h1>
+<p>Maak 4 knoppen naast elkaar.
+Op de ene knop staat A, de andere B, die daarnaast C en die daarnaast D.
+ 
+Op het moment dat je op knop C van de knoppen klikt verschijnt er in een div.
+U heeft op knop C geklikt.
+ 
+Op het moment dat je op knop D klikt verschijnt er in een div.
+U heeft op knop C geklikt.
+U heeft op knop D geklikt.
+ 
+Hij houd dus jouw knop-klik history bij. </p>
+
+<button id="knopA" onclick="youClickedOnA()">A</button>
+<button id="knopB" onclick="youClickedOnB()">B</button>
+<button id="knopC" onclick="youClickedOnC()">C</button>
+<button id="knopD" onclick="youClickedOnD()">D</button>
+
+<br><br>
+<div id="A"></div>
+<div id="B"></div>
+<div id="C"></div>
+<div id="D"></div>
+
+<!-- Mini Opdracht 6-->
+<h1>Miniopdracht 6</h1>
+
+<p>Maak een afbeelding zichtbaar in je scherm.
+Maak een knop.
+
+Als ik op de knop klik, verandert de afbeelding naar een nieuwe afbeelding.
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb
+
+ADVANCED: Klik door vier seizoenen heen. Plaatje van de Zomer, Herfst, Winter, Lente. 
+Na iedere winter is er 1 jaar voorbij. In de div staat na 13 keer klikken. 
+Er zijn 3 jaren voorbij.</p>
+
+<!-- <button onclick="document.getElementById('myImage').src='zomer.jpeg'">Zomer</button> -->
+<img id="myImage" style="width:100px">
+
+<button onclick=Images()>Switch Season</button>
+</body>
+</html>
