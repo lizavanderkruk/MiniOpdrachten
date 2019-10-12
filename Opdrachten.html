@@ -3,6 +3,7 @@
         <style>
         </style>
         <script>
+            //Tafels 
             function Multiply(getal1,getal2){
                 var getal1 = document.getElementById("input1").value;
                 var getal2 = document.getElementById("input2").value;
@@ -29,11 +30,50 @@
                     }
                     }
                 }
+
+            // Rekenmachine
+            function Optellen(){
+            var cijfer1 = document.getElementById("invoer1").value;
+            var cijfer2 = document.getElementById("invoer2").value;
+            var Som = parseInt(cijfer1) + parseInt(cijfer2);
+                 document.getElementById("antwoord").innerHTML = Som;
+            }
+            function Aftrekken(){
+            var cijfer1 = document.getElementById("invoer1").value;
+            var cijfer2 = document.getElementById("invoer2").value;
+            var Min = parseInt(cijfer1) - parseInt(cijfer2);
+                 document.getElementById("antwoord").innerHTML = Min;
+            }
+            function Kwadraat(){
+            var cijfer1 = document.getElementById("invoer1").value;
+            var cijfer2 = document.getElementById("invoer2").value; 
+            var Kwadraat = Math.pow((parseInt(cijfer1)),(parseInt(cijfer2)));
+                 document.getElementById("antwoord").innerHTML = Kwadraat;
+            }
+            function Deling(){
+            var cijfer1 = document.getElementById("invoer1").value;
+            var cijfer2 = document.getElementById("invoer2").value;
+            var Deling = parseInt(cijfer1) / parseInt(cijfer2);
+                 document.getElementById("antwoord").innerHTML = Deling;
+            }
+            function Wortel(){
+            var cijfer1 = document.getElementById("invoer1").value;
+            var Wortel = Math.sqrt(parseInt(cijfer1));
+                 document.getElementById("antwoord").innerHTML = Wortel;
+            }
+            //Advanced -- nog niet af
+            function Priemgetal(){
+            var cijfer1 = document.getElementById("invoer1").value;
+            if (cijfer1%cijfer1 == 0){
+                document.getElementById("antwoord").innerHTML = "Dit cijfer is een priemgetal";
+            }
+            }
         </script>
         
     </head>
     <body>
-        <h1>Opdracht 1</h1>
+        <!--Tafels-->
+        <h1>Tafels</h1>
         <p>Schrijf een code waarin er door de cijfers 1 t/m 100 wordt geloopd. 
             Voor elke meervoud van 4 wordt er in een div vermeld: het cijfer met daarbij “komt voor in de tafel van 4”. 
             Voor elke meervoud van 7 wordt er in een div vermeld: het cijfer met daarbij “komt voor in de tafel van 7”. 
@@ -49,6 +89,24 @@
         <input id=eindgetal type=text value="Vul het getal in waar tot waar er getelt moet worden">
         <button onclick=Multiply()>Ga</button>
         <div id=spot></div>
+
+        <!--Rekenmachine-->
+        <h1>Rekenmachine</h1>
+        <p>je voert twee getallen getal in en je krijgt de som, kwadraat, wortel, deling,  
+            uitkomst van eraf halen, afhankelijk van op welke knop je klikt.
+        ADVANCED priemgetal</p>
+        
+        <input id=invoer1 type=text value="Vul een getal in">
+        <input id=invoer2 type=text value="Vul een getal in"><br>
+        <br>De uitkomst is:<div id=antwoord></div>
+        <br><button onclick=Optellen()>Bereken de Som</button>
+        <br><button onclick=Aftrekken()>Bereken de uitkomst van eraf halen</button>
+        <br><button onclick=Kwadraat()>Bereken het kwadraat</button>
+        <br><button onclick=Deling()>Bereken de uitkomst van de deling</button>
+        <br><button onclick=Wortel()>Bereken de Wortel</button>
+        <br><button onclick=Priemgetal()>Is het getal een priemgetal?</button>
+        
+
        
             
             
