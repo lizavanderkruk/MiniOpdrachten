@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+        </style>
+        <script>
+            function Multiply(getal1,getal2){
+                var getal1 = document.getElementById("input1").value;
+                var getal2 = document.getElementById("input2").value;
+                var eindgetal = document.getElementById("eindgetal").value;
+            
+                for (x=1; x<=eindgetal; x++){
+                    //console.log(getal1);
+                    //console.log(getal2);
+                    if (x%getal1 == 0 && x%getal2 == 0){
+                        document.getElementById("spot").innerHTML += "<br>" + x + " komt zowel voor in de tafel van " + getal1 + " als " + getal2;
+                        //console.log(x + " komt zowel voor in de tafel van 4 als 7.");
+                    }
+                    else if (x%getal1 == 0){
+                        document.getElementById("spot").innerHTML += "<br>" + x + " komt voor in de tafel " + getal1;
+                        //console.log(x + " komt voor in de tafel van 4.");
+                    } 
+                    else if (x%getal2 == 0){
+                        document.getElementById("spot").innerHTML += "<br>" + x + " komt voor in de tafel van " + getal2;
+                        //console.log(x + " komt voor in de tafel van 7.");
+                    } 
+                    else if (x%getal1 != 0 && x%getal2 != 0){
+                        document.getElementById("spot").innerHTML += "<br>" + x;
+                        //console.log(x);
+                    }
+                    }
+                }
+        </script>
+        
+    </head>
+    <body>
+        <h1>Opdracht 1</h1>
+        <p>Schrijf een code waarin er door de cijfers 1 t/m 100 wordt geloopd. 
+            Voor elke meervoud van 4 wordt er in een div vermeld: het cijfer met daarbij “komt voor in de tafel van 4”. 
+            Voor elke meervoud van 7 wordt er in een div vermeld: het cijfer met daarbij “komt voor in de tafel van 7”. 
+            Indien het geval een veelvoud is van beide cijfers, wordt er vermeld: het cijfer met daarbij “komt zowel voor in de tafel van 4 als in de tafel van 7”. 
+            Je ziet wel alle getallen.
+            
+            ADVANCED
+            100 zelf mag kiezen getal tot waar je telt kan je invoeren
+            De twee getallen waarin de tafels kan je kiezen. (eventueel dropdown)</p>
+
+        <input id=input1 type=text value="Vul een getal in">
+        <input id=input2 type=text value="Vul een getal in">
+        <input id=eindgetal type=text value="Vul het getal in waar tot waar er getelt moet worden">
+        <button onclick=Multiply()>Ga</button>
+        <div id=spot></div>
+       
+            
+            
+
+    </body>
+
+
+
+
+</html>
+

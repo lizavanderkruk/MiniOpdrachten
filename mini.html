@@ -1,0 +1,55 @@
+<html>
+<head>
+<script>
+var Seasons = ["lente.jpeg", "zomer.jpeg", "herfst.jpeg", "winter.jpeg"];
+            var joejoe = 0;
+            var clickCount = 0;
+
+            function Images(){
+                if (joejoe == 0){
+                    document.getElementById("myImage").src = Seasons[0];
+                    joejoe++;
+                    clickCount++;
+                }
+                else if (joejoe == 1){
+                    document.getElementById("myImage").src = Seasons[1];
+                    joejoe++;
+                    clickCount++;
+                }
+                else if (joejoe == 2){
+                    document.getElementById("myImage").src = Seasons[2];
+                    joejoe++;
+                    clickCount++;
+                }
+                else if (joejoe == 3){
+                    document.getElementById("myImage").src = Seasons[3];
+                    joejoe = 0;
+                    clickCount++;
+                }
+                if (clickCount == 13){
+                    alert("Er is 3 jaar voorbij");
+                }
+                
+            }
+    </script>
+    </head>
+    <body>
+<!-- Mini Opdracht 6-->
+<h1>Miniopdracht 6</h1>
+
+<p>Maak een afbeelding zichtbaar in je scherm.
+Maak een knop.
+
+Als ik op de knop klik, verandert de afbeelding naar een nieuwe afbeelding.
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb
+
+ADVANCED: Klik door vier seizoenen heen. Plaatje van de Zomer, Herfst, Winter, Lente. 
+Na iedere winter is er 1 jaar voorbij. In de div staat na 13 keer klikken. 
+Er zijn 3 jaren voorbij.</p>
+
+
+<img id="myImage" style="width:100px">
+
+<button onclick=Images()>Switch Season</button>
+
+    </body>

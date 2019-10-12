@@ -117,23 +117,30 @@
             //     }
             // }
             var joejoe = 0;
+            var clickcount = 0;
             function Images(){
                 if (joejoe == 0){
                     document.getElementById("myImage").src = Seasons[0];
                     joejoe++;
+                    clickcount++;
                 }
             else if (joejoe == 1){
                     document.getElementById("myImage").src = Seasons[1];
                     joejoe++;
+                    clickcount++;
                 }
             else if (joejoe == 2){
                     document.getElementById("myImage").src = Seasons[2];
                     joejoe++;
+                    clickcount++;
                 }
-            else{
+            else if (joejoe == 3){
                     document.getElementById("myImage").src = Seasons[3];
                     joejoe = 0;
+                    clickcount++;
                 }
+            } if (clickcount == 13){
+                alert("Er zijn 3 jaar voorbij gegaan.")
             }
             
         
