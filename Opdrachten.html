@@ -64,10 +64,69 @@
             //Advanced -- nog niet af
             function Priemgetal(){
             var cijfer1 = document.getElementById("invoer1").value;
-            if (cijfer1%cijfer1 == 0){
-                document.getElementById("antwoord").innerHTML = "Dit cijfer is een priemgetal";
+                if (cijfer1%cijfer1 == 0){
+                    document.getElementById("antwoord").innerHTML = "Dit cijfer is een priemgetal";
             }
             }
+            //RNA translatie
+            var RNA = ["UUG", "UAU", "UGC", "UUU", "UCC", "AUG", "AUG", "UAC", "UAG", "UUA", "UCU"];
+            var Methionine = "AUG";
+            var Phenylalanine = "UUU";
+            var Phenylalanine1 = "UUC";
+            var Leucine = "UUA";
+            var Leucine1 = "UUG";
+            var Serine = "UCU";
+            var Serine1 = "UCC";
+            var Serine2 = "UCA";
+            var Serine3 = "UCG";
+            var Tyrosine = "UAU";
+            var Tyrosine1 = "UAC";
+            var Cysteine = "UGU";
+            var Cysteine1 = "UGC";
+            var Tryptophan = "UGG";
+            var STOP = "UAA";
+            var STOP1 = "UAG";
+            var STOP2 = "UGA";
+            var count = 0;
+
+            function RNAtrans(){
+                for (x=0; x<RNA.length; x++){
+                    // var x =0;
+                    if(RNA[x]== STOP || RNA[x]== STOP1 || RNA[x]== STOP2){
+                        document.getElementById("translatie").innerHTML += "<br> STOP";
+                        //console.log("stop");
+                        break
+                    }
+                    if(RNA[x]== Phenylalanine || RNA[x]== Phenylalanine1){
+                        //console.log("phenylalanine");
+                        document.getElementById("translatie").innerHTML += "<br> Phenylalanine";
+                    }
+                    if(RNA[x]== Leucine || RNA[x]== Leucine1){
+                        //console.log("leucine");
+                        document.getElementById("translatie").innerHTML += "<br> Leucine";
+                    }
+                    if(RNA[x]== Serine || RNA[x]== Serine1 || RNA[x]== Serine2 || RNA[x]== Serine3){
+                        //console.log("serine");
+                        document.getElementById("translatie").innerHTML += "<br> Serine";
+                    }
+                    if(RNA[x]== Tyrosine || RNA[x]== Tyrosine1){
+                        //console.log("tyrosine");
+                        document.getElementById("translatie").innerHTML += "<br> Tyrosine";
+                    }
+                    if(RNA[x]== Cysteine || RNA[x]== Cysteine1){
+                        //console.log("cysteine");
+                        document.getElementById("translatie").innerHTML += "<br> Cysteine";
+                    }
+                    if(RNA[x]== Tryptophan){
+                        //console.log("tryptophan");
+                        document.getElementById("translatie").innerHTML += "<br> Tryptohan";  
+                    }
+                    if (RNA[x] == Methionine){
+                        //console.log("methionine");
+                        document.getElementById("translatie").innerHTML += "<br> Methionine"; 
+                    }
+                }
+           }
         </script>
         
     </head>
@@ -106,11 +165,14 @@
         <br><button onclick=Wortel()>Bereken de Wortel</button>
         <br><button onclick=Priemgetal()>Is het getal een priemgetal?</button>
         
+        <!--RNA translatie-->
+        <h1>RNA translatie</h1>
+        <p>Maak een code waarin de output de volgorde geeft van de peptide in een div. 
+            Zodra er een stopcodon in de RNA streng zit, moet de reeks stoppen en het eindresultaat worden weergegeven. 
+            De RNA streng die je moet gebruiken: “UUG UAU UGC UUU UCC AUG AUG UAC UAG UUA UCU”</p>
 
-       
-            
-            
-
+            <button onclick=RNAtrans()>Transleer RNA streng</button>
+            <div id="translatie"></div>
     </body>
 
 
