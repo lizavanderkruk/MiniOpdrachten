@@ -1,6 +1,11 @@
 <html>
     <head>
         <style>
+            td{
+                border: 2px solid black;
+                height: 30px;
+                width: 30px;
+            }
         </style>
         <script>
             //Tafels 
@@ -127,6 +132,72 @@
                     }
                 }
            }
+           var kleuren = ["rood", "geel", "groen", "blauw", "roze"];
+           var x =0;
+           function changeColor(){
+               //for (x=0; x<kleuren.length; x++){
+                   if (kleuren[x]== "rood"){
+                       document.getElementById("rood").style.color = "red";
+                       x++;
+                   }
+                   else if (kleuren[x] == "geel"){
+                       document.getElementById("geel").style.color = "yellow";
+                       x++;
+                   }
+                   else if (kleuren[x] == "groen"){
+                       document.getElementById("groen").style.color = "green";
+                       x++;
+                   }
+                   else if (kleuren[x]== "blauw"){
+                       document.getElementById("blauw").style.color = "blue";
+                       x++;
+                   }
+                   else if (kleuren[x]== "roze"){
+                       document.getElementById("roze").style.color = "pink";
+                       x++;
+                   }
+               }
+           //}
+           function removeColor(){
+               document.getElementById("rood").style.color = "black";
+               document.getElementById("geel").style.color = "black";
+               document.getElementById("groen").style.color = "black";
+               document.getElementById("blauw").style.color = "black";
+               document.getElementById("roze").style.color = "black";
+           }
+
+           // Gekleurde hokjes
+           var hokjes = [0,1,2];
+           function coloredSquares(x){
+               if (hokjes[x] == 0){
+               document.getElementById(0).style.backgroundColor = "blue"; 
+               document.getElementById(1).style.backgroundColor = "white";
+               document.getElementById(2).style.backgroundColor = "white";
+           }
+           else if (hokjes[x] ==1) {
+               document.getElementById(1).style.backgroundColor = "blue";
+               document.getElementById(0).style.backgroundColor = "white";
+               document.getElementById(2).style.backgroundColor = "white";
+           }
+           else if (hokjes[x]==2){
+               document.getElementById(2).style.backgroundColor = "blue";
+               document.getElementById(0).style.backgroundColor = "white";
+               document.getElementById(1).style.backgroundColor = "white";
+           }
+           }
+
+           // Local Storage
+           function gevenAlert(){
+            var inputTekst = document.getElementById("invoertekst").value;
+            var tellen = ["eerste", "tweede", "derde", "vierde"];
+               alert("Je " + tellen[x] + " invoer is : " + inputTekst);
+               localStorage.setItem("eerdereinvoer", inputTekst);
+               return tellen++;
+           }
+           function opvragen(){
+            var opgevraagd = localStorage.getItem("eerdereinvoer");
+            console.log(opgevraagd);
+           }
         </script>
         
     </head>
@@ -173,6 +244,50 @@
 
             <button onclick=RNAtrans()>Transleer RNA streng</button>
             <div id="translatie"></div>
+
+        <!--Gekleurde woorden-->
+        <h1>Gekleurde woorden</h1>
+        <p>Ik wil een rij ( een Array) met daarin de woorden (rood, geel, groen, blauw, roze) en dan wil ik een knop maken. 
+            Die geeft een kleur aan het woord en als alle woorden een kleur hebben dan krijg je een alert.
+            Van links naar kleur krijgen ze de kleur die erbij hoort
+
+            ADVANCED: maak een extra knop die er voor zorgt dat alle kleuren weer verdwijnen.</p>
+        
+        <button onclick=changeColor()>Kleurknop</button>
+        <button onclick=removeColor()>Color remover</button>
+        <div id=rood onclick=changeColor(this)>Rood</div>
+        <div id=geel onclick=changeColor(this)>Geel</div>
+        <div id=groen onclick=changeColor(this)>Groen</div>
+        <div id=blauw onclick=changeColor(this)>Blauw</div>
+        <div id=roze onclick=changeColor(this)>Roze</div>
+
+        <!--Gekleurde hokjes-->
+        <h1>Gekleurde hokjes</h1>
+        <p>Maak een aantal vakjes en elke keer dat je op een vakje klikt wordt het geklikte vakje een random kleur,
+            en het vakje dat reeds gekleurd was weer blanco</p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td id=0 onclick=coloredSquares(id)></td>
+                    <td id=1 onclick=coloredSquares(id)></td>
+                    <td id=2 onclick=coloredSquares(id)></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Local Storage-->
+        <h1>Local Storage--</h1>
+        <p>ik maak een invoerveld en twee knoppen. De ene knop geeft een alert (je EERSTE invoer is: ....)
+        EERSTE is een variabele die meetelt. Het veld gaat na de invoer leeg.
+
+        ADVANCED: de andere showt in je webpagina wat je allemaal hebt ingevoerd</p>
+
+        <input id=invoertekst type=text>
+        <button onclick=gevenAlert()>Klik</button>
+        <button onclick=opvragen()>Show all inserts</button>
+        <div></div>
+
     </body>
 
 
